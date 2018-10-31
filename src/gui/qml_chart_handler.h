@@ -18,19 +18,20 @@ QT_BEGIN_NAMESPACE
 class QAudioInput;
 QT_END_NAMESPACE
 
-class qml_chart_handler : public QObject {
+class qml_chart_handler : public QObject
+{
 	Q_OBJECT
-  public:
+public:
 	explicit qml_chart_handler(QObject *root_object, QObject *parent = nullptr);
 	~qml_chart_handler();
 
-  signals:
+signals:
 
-  public slots:
+public slots:
 	void init_chart(const QVariant &axisX, const QVariant &axisY,
 			const QVariant &line_series);
 
-  private:
+private:
 	x_y__series_io_device *m_device;
 	QChart *m_chart;
 	QAudioInput *m_audioInput;
