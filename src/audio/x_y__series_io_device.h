@@ -10,17 +10,16 @@ QT_CHARTS_END_NAMESPACE
 
 QT_CHARTS_USE_NAMESPACE
 
-class x_y__series_io_device : public QIODevice
-{
+class x_y__series_io_device : public QIODevice {
 	Q_OBJECT
-public:
+  public:
 	explicit x_y__series_io_device(QXYSeries *series, QObject *parent = 0);
 
-protected:
+  protected:
 	qint64 readData(char *data, qint64 maxSize);
 	qint64 writeData(const char *data, qint64 maxSize);
 
-private:
+  private:
 	QXYSeries *m_series;
 };
 

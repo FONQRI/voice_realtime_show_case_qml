@@ -20,12 +20,10 @@ qint64 x_y__series_io_device::writeData(const char *data, qint64 maxSize)
 	QVector<QPointF> points;
 	int resolution = 4;
 
-	if (oldPoints.count() < range)
-	{
+	if (oldPoints.count() < range) {
 		points = m_series->pointsVector();
 	}
-	else
-	{
+	else {
 		for (int i = maxSize / resolution; i < oldPoints.count(); i++)
 		points.append(
 			QPointF(i - maxSize / resolution, oldPoints.at(i).y()));

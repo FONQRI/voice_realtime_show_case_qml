@@ -14,8 +14,7 @@ qml_chart_handler::qml_chart_handler(QObject *root_object, QObject *parent)
 	: QObject(parent)
 {
 	auto item = root_object->findChild<QObject *>("chart_view");
-	if (!item)
-	{
+	if (!item) {
 		qDebug() << "ops";
 	}
 
@@ -32,6 +31,7 @@ qml_chart_handler::~qml_chart_handler()
 void qml_chart_handler::init_chart(const QVariant &axisX, const QVariant &axisY,
 				   const QVariant &line_series)
 {
+	qDebug() << "caled";
 
 	QLineSeries *m_series =
 	qobject_cast<QLineSeries *>(line_series.value<QObject *>());
