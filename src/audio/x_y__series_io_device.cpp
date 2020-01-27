@@ -1,19 +1,19 @@
 #include "x_y__series_io_device.h"
 #include <QtCharts/QXYSeries>
 
-x_y__series_io_device::x_y__series_io_device(QXYSeries *series, QObject *parent)
+x_y_series_io_device::x_y_series_io_device(QXYSeries *series, QObject *parent)
 	: QIODevice(parent), m_series(series)
 {
 }
 
-qint64 x_y__series_io_device::readData(char *data, qint64 maxSize)
+qint64 x_y_series_io_device::readData(char *data, qint64 maxSize)
 {
 	Q_UNUSED(data)
 	Q_UNUSED(maxSize)
 	return -1;
 }
 
-qint64 x_y__series_io_device::writeData(const char *data, qint64 maxSize)
+qint64 x_y_series_io_device::writeData(const char *data, qint64 maxSize)
 {
 	qint64 range = 2000;
 	QVector<QPointF> oldPoints = m_series->pointsVector();
